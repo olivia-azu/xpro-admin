@@ -471,12 +471,19 @@ class LandingController extends Controller
 
     public function common_landing_custom_settings(Request $request)
     {
-        $settings = allsetting();
-        $data['common_settings'] = $this->common_settings_data($settings);
-        $data['landing_settings'] = $this->landing_settings_data($settings,$request);
-        $data['custom_page_settings'] = $this->custom_page_data($request->type);
-
-        return response()->json($data);
+        try {
+            $settings = allsetting();
+            $data['common_settings'] = $this->common_settings_data($settings);
+            $data['landing_settings'] = $this->landing_settings_data($settings,$request);
+            $data['custom_page_settings'] = $this->custom_page_data($request->type);
+    
+            return response()->json($data);
+        } catch (\Throwable $th) {
+            $this->logger->log('getCustomPageDetails', $e->getMessage());
+            $response = ['success' => false, 'message' => __('Something went wrong'), 'data' => (object)[]];
+    
+        }
+        
     }
 
     public function common_settings_data($settings)

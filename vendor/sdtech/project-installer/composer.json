@@ -1,0 +1,35 @@
+{
+    "name": "sdtech/project-installer",
+    "description": "Simple Laravel web installer with codecanyon product validation",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "type": "library",
+    "authors": [
+        {
+            "name": "sd bacchu",
+            "email": "bacchu.cse11@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SdTech\\ProjectInstaller\\": "src/"
+        },
+        "files": [
+            "src/Helpers/functions.php"
+        ]
+    },
+
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SdTech\\ProjectInstaller\\Providers\\ProjectInstallerServiceProvider"
+            ]
+        }
+    }
+}

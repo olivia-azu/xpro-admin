@@ -60,6 +60,7 @@ Route::group(['middleware' => 'maintenanceMode'], function (){
             Route::get('pages-details/{slug}', 'LandingController@getCustomPageDetails');
 
             Route::get('common-landing-custom-settings', 'LandingController@common_landing_custom_settings');
+            
             Route::get('faq-list', 'FaqController@faqList');
             Route::get('market-overview-coin-statistic-list', 'LandingController@getMarketOverviewCoinStatisticList');
             Route::get('market-overview-top-coin-list', 'LandingController@getMarketOverviewTopCoinList');
