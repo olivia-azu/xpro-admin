@@ -1,0 +1,34 @@
+{
+    "name": "sdtech/coinpayments-laravel",
+    "description": "coinpayments api integration with laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sd bacchu",
+            "email": "bacchu.cse11@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sdtech\\CoinpaymentsLaravel\\": "src/"
+        },
+        "files": [
+            "src/Service/CoinPaymentLaravelService.php"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sdtech\\CoinpaymentsLaravel\\Providers\\CoinPaymentServiceProviders"
+            ]
+        }
+    }
+}
